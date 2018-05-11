@@ -17,10 +17,10 @@ int main()
    {
       if (timestep % 100 == 0)
          std::cout << "timestep: " << timestep << std::endl;
-      addCar(tl, 0.4);
+      addCar(tl, 1.0);
       accelerate(tl);
       decelerate(tl);
-      dawdle(tl, 0.7);
+      dawdle(tl, 0.3);
       move(tl);
       removeCars(tl, streetLength);
       for (const Car& car : tl)

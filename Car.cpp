@@ -15,13 +15,12 @@ void accelerate(TrafficLine& cars)
 void decelerate(TrafficLine& cars)
 {
    if (cars.empty()) return;
-   for (auto carIt = cars.begin(); carIt!=cars.end() - 1; ++carIt)
+   for (auto carIt = cars.rbegin() + 1; carIt!=cars.rend(); ++carIt)
    {
-      auto d = (carIt + 1)->x - carIt->x;
-      assert(d>0);
+      auto d = (carIt - 1)->x + (carIt - 1)->v - carIt->x;
       if (d <= carIt->v)
       {
-         carIt->v = d-1;
+         carIt->v = std::min(d-1, carIt->vmax);
       }
    }
 }
