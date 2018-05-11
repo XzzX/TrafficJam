@@ -1,5 +1,6 @@
 # Simple Traffic Jam Simulation
-A simple car model is used. In every time step each car is doing the following actions.
+A simple car model is used. In every time step each car is doing the following actions:
+
 * accelerate
 * break if there is someone right in front
 * dawdle with a certain possibility
